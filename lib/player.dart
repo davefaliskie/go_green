@@ -25,4 +25,14 @@ class Player extends SpriteComponent with HasGameRef<GoGreenGame> {
 
     position.y = newY;
   }
+
+  void move(double deltaX) {
+    double newX = position.x + deltaX;
+
+    double minX = -(gameRef.size.x / 2) + size.x / 2; // Left boundary
+    double maxX = (gameRef.size.x / 2) - size.x / 2; // Right boundary
+    newX = newX.clamp(minX, maxX);
+
+    position.x = newX;
+  }
 }
