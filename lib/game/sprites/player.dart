@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:flame/collisions.dart';
 import 'package:flame/components.dart';
 import 'package:go_green/constants.dart';
 import 'package:go_green/game/go_green_game.dart';
@@ -11,6 +12,7 @@ class Player extends SpriteComponent with HasGameRef<GoGreenGame> {
     size = Vector2.all(100);
     position = Vector2(0, -(gameHeight / 2) + (size.y / 2));
     anchor = Anchor.center;
+    add(RectangleHitbox());
   }
 
   @override
