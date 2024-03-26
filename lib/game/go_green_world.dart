@@ -24,10 +24,10 @@ class GoGreenWorld extends World with HasGameRef<GoGreenGame> {
         obstacle = ObstacleWater()..position = data.position;
       } else if (data.type == ObstacleType.fire) {
         obstacle = ObstacleFire()..position = data.position;
-        // } else if (data.type == ObstacleType.binTrash) {
-        //   obstacle = BinTrash()..position = data.position;
-        // } else if (data.type == ObstacleType.binRecycle) {
-        //   obstacle = BinRecycle()..position = data.position;
+      } else if (data.type == ObstacleType.binTrash) {
+        obstacle = BinTrash()..position = data.position;
+      } else if (data.type == ObstacleType.binRecycle) {
+        obstacle = BinRecycle()..position = data.position;
       } else {
         continue;
       }
@@ -42,7 +42,6 @@ class GoGreenWorld extends World with HasGameRef<GoGreenGame> {
     player = Player();
 
     add(player);
-    add(Bin());
 
     loadLevel(LevelData().level1());
   }

@@ -5,8 +5,8 @@ enum ObstacleType {
   trash,
   water,
   fire,
-  // binTrash,
-  // binRecycle,
+  binTrash,
+  binRecycle,
 }
 
 class ObstacleData {
@@ -21,15 +21,13 @@ class LevelData {
   final leftSide = -(gameWidth / 2) + (obstacleSize / 2);
   final rightSide = (gameWidth / 2) - (obstacleSize / 2);
 
+  // Easy Just Trash
   List<ObstacleData> level1() {
     List<ObstacleData> level = [];
 
     level.addAll(obstacleRow(
       row: 0,
       item1: ObstacleType.trash,
-      item2: ObstacleType.fire,
-      item4: ObstacleType.trash,
-      item5: ObstacleType.trash,
     ));
 
     level.addAll(obstacleRow(
@@ -88,14 +86,14 @@ class LevelData {
       item3: ObstacleType.trash,
     ));
 
-    // level.addAll(obstacleRow(
-    //   row: 12,
-    //   item1: ObstacleType.binRecycle,
-    //   item2: ObstacleType.binTrash,
-    //   item3: ObstacleType.binRecycle,
-    //   item4: ObstacleType.binTrash,
-    //   item5: ObstacleType.binRecycle,
-    // ));
+    level.addAll(obstacleRow(
+      row: 12,
+      item1: ObstacleType.binRecycle,
+      item2: ObstacleType.binTrash,
+      item3: ObstacleType.binRecycle,
+      item4: ObstacleType.binTrash,
+      item5: ObstacleType.binRecycle,
+    ));
 
     return level;
   }
