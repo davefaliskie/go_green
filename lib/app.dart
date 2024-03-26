@@ -25,7 +25,7 @@ class _GameAppState extends State<GameApp> {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         useMaterial3: true,
-        scaffoldBackgroundColor: Colors.yellow,
+        scaffoldBackgroundColor: Colors.white,
       ),
       home: Scaffold(
         body: SafeArea(
