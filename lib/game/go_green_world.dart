@@ -43,7 +43,7 @@ class GoGreenWorld extends World with HasGameRef<GoGreenGame> {
 
     add(player);
 
-    loadLevel(LevelData().getLevel(4));
+    loadLevel(LevelData().getLevel(5));
   }
 
   @override
