@@ -19,11 +19,11 @@ class GoGreenGame extends FlameGame<GoGreenWorld>
           ),
         );
 
-  @override
-  FutureOr<void> onLoad() {
-    super.onLoad();
-    debugMode = true;
-  }
+  // @override
+  // FutureOr<void> onLoad() {
+  //   super.onLoad();
+  //   debugMode = true;
+  // }
 
   @override
   Color backgroundColor() {
