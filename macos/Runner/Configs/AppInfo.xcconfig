@@ -8,7 +8,7 @@
 PRODUCT_NAME = go_green
 
 // The application's bundle identifier
-PRODUCT_BUNDLE_IDENTIFIER = com.1manstartup.gogreen.goGreen
+PRODUCT_BUNDLE_IDENTIFIER = com.u1manstartup.gogreen
 
 // The copyright displayed in application information
-PRODUCT_COPYRIGHT = Copyright © 2024 com.1manstartup.go_green. All rights reserved.
+PRODUCT_COPYRIGHT = Copyright © 2024 1ManStartup LLC. All rights reserved.

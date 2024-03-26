@@ -89,11 +89,11 @@ BEGIN
     BEGIN
         BLOCK "040904e4"
         BEGIN
-            VALUE "CompanyName", "com.1manstartup.go_green" "\0"
+            VALUE "CompanyName", "com.u1manstartup.gogreen" "\0"
             VALUE "FileDescription", "go_green" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
             VALUE "InternalName", "go_green" "\0"
-            VALUE "LegalCopyright", "Copyright (C) 2024 com.1manstartup.go_green. All rights reserved." "\0"
+            VALUE "LegalCopyright", "Copyright (C) 2024 1ManStartup LLC. All rights reserved." "\0"
             VALUE "OriginalFilename", "go_green.exe" "\0"
             VALUE "ProductName", "go_green" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"

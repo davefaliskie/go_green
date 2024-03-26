@@ -1,4 +1,4 @@
-package com.u1manstartup.go_green.go_green
+package com.u1manstartup.gogreen
 
 import io.flutter.embedding.android.FlutterActivity
 
