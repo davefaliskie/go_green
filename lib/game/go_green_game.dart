@@ -5,17 +5,21 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:go_green/constants.dart';
 import 'package:go_green/game/go_green_world.dart';
+import 'package:go_green/game_end_state.dart';
 
 class GoGreenGame extends FlameGame<GoGreenWorld>
     with HorizontalDragDetector, KeyboardEvents, HasCollisionDetection {
-  GoGreenGame()
-      : super(
+  GoGreenGame({
+    required this.endCallback,
+  }) : super(
           world: GoGreenWorld(),
           camera: CameraComponent.withFixedResolution(
             width: gameWidth,
             height: gameHeight,
           ),
         );
+
+  final void Function(GameEndState endState) endCallback;
 
   // @override
   // FutureOr<void> onLoad() {

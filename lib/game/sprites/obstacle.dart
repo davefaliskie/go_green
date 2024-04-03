@@ -4,6 +4,7 @@ import 'package:flutter/foundation.dart';
 import 'package:go_green/constants.dart';
 import 'package:go_green/game/go_green_game.dart';
 import 'package:go_green/game/sprites/player.dart';
+import 'package:go_green/game_end_state.dart';
 
 class Obstacle extends SpriteComponent
     with HasGameRef<GoGreenGame>, CollisionCallbacks {
@@ -43,6 +44,7 @@ class ObstacleTrash extends Obstacle {
     if (other is Player) {
       other.removeFromParent();
       // End State set
+      game.endCallback(GameEndState.trash);
       debugPrint("TRASH object Was hit");
     }
     super.onCollisionStart(intersectionPoints, other);
@@ -63,6 +65,7 @@ class ObstacleWater extends Obstacle {
     if (other is Player) {
       other.removeFromParent();
       // End State set
+      game.endCallback(GameEndState.water);
       debugPrint("WATER object Was hit");
     }
     super.onCollisionStart(intersectionPoints, other);
@@ -83,6 +86,7 @@ class ObstacleFire extends Obstacle {
     if (other is Player) {
       other.removeFromParent();
       // End State set
+      game.endCallback(GameEndState.fire);
       debugPrint("FIRE object Was hit");
     }
     super.onCollisionStart(intersectionPoints, other);
