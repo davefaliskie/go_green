@@ -11,6 +11,7 @@ class GoGreenGame extends FlameGame<GoGreenWorld>
     with HorizontalDragDetector, KeyboardEvents, HasCollisionDetection {
   GoGreenGame({
     required this.endCallback,
+    required this.level,
   }) : super(
           world: GoGreenWorld(),
           camera: CameraComponent.withFixedResolution(
@@ -20,6 +21,7 @@ class GoGreenGame extends FlameGame<GoGreenWorld>
         );
 
   final void Function(GameEndState endState) endCallback;
+  final int level;
 
   // @override
   // FutureOr<void> onLoad() {
