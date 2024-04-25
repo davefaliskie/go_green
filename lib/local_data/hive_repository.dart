@@ -28,6 +28,10 @@ class HiveRepository {
     debugPrint("LEVEL: ${(recycleEnd + 1).clamp(1, 5)}");
     return (recycleEnd + 1).clamp(1, 5);
   }
+
+  Future<void> resetGame() async {
+    await box.clear();
+  }
 }
 
 @Riverpod(keepAlive: true)

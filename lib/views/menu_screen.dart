@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_green/local_data/hive_repository.dart';
 import 'package:go_green/router.dart';
+import 'package:go_green/widgets/reset_game_button.dart';
 import 'package:go_router/go_router.dart';
 
 class MenuScreen extends ConsumerStatefulWidget {
@@ -14,7 +15,7 @@ class MenuScreen extends ConsumerStatefulWidget {
 class _MenuScreenState extends ConsumerState<MenuScreen> {
   @override
   Widget build(BuildContext context) {
-    final db = ref.read(hiveRepositoryProvider);
+    final db = ref.watch(hiveRepositoryProvider);
     return Scaffold(
       appBar: AppBar(
         title: const Text(
@@ -36,7 +37,8 @@ class _MenuScreenState extends ConsumerState<MenuScreen> {
                 context.goNamed(AppRoute.game.name);
               },
               child: const Text("Start Game"),
-            )
+            ),
+            const ResetGameButton(),
           ],
         ),
       ),
