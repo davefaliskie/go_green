@@ -30,11 +30,11 @@ class ResetGameButton extends ConsumerWidget {
                   child: const Text("No, Cancel"),
                 ),
                 ElevatedButton(
-                  onPressed: () {
-                    ref.read(hiveRepositoryProvider).resetGame();
+                  onPressed: () async {
+                    context.pop();
+                    await ref.read(hiveRepositoryProvider).resetGame();
                     ref.invalidate(hiveRepositoryProvider);
                     HapticFeedback.mediumImpact();
-                    context.pop();
                   },
                   child: const Text(
                     "Yes, Reset Game",
