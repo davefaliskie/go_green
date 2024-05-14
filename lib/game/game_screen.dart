@@ -1,4 +1,5 @@
 import 'package:flame/game.dart';
+import 'package:flame_audio/flame_audio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_green/constants.dart';
@@ -21,9 +22,17 @@ class _GameScreenState extends ConsumerState<GameScreen> {
   @override
   void initState() {
     super.initState();
+
+    if (ref.read(canPlaySoundProvider)) {
+      FlameAudio.bgm.initialize();
+      FlameAudio.bgm.play('bg_game.mp3', volume: 0.2);
+    }
+
     game = GoGreenGame(
       level: ref.read(hiveRepositoryProvider).setLevel(),
       endCallback: (GameEndState endState) {
+        FlameAudio.bgm.stop();
+
         // save attempt
         ref.read(hiveRepositoryProvider).saveAttempt(endState);
 

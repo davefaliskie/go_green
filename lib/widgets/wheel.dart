@@ -1,17 +1,20 @@
 import 'dart:async';
 import 'dart:math';
 
+import 'package:flame_audio/flame_audio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_fortune_wheel/flutter_fortune_wheel.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_green/local_data/hive_repository.dart';
 
-class Wheel extends StatefulWidget {
+class Wheel extends ConsumerStatefulWidget {
   const Wheel({super.key});
 
   @override
-  State<Wheel> createState() => _WheelState();
+  ConsumerState<Wheel> createState() => _WheelState();
 }
 
-class _WheelState extends State<Wheel> {
+class _WheelState extends ConsumerState<Wheel> {
   StreamController<int> controller = StreamController<int>();
   int? outcome;
 
@@ -66,6 +69,9 @@ class _WheelState extends State<Wheel> {
           ),
         ],
         onFling: () {
+          if (ref.read(canPlaySoundProvider)) {
+            FlameAudio.play('spin.mp3');
+          }
           List<int> outcomes = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 
           setState(() {

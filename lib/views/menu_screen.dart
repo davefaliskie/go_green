@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_green/local_data/hive_repository.dart';
 import 'package:go_green/router.dart';
+import 'package:go_green/widgets/mute_button.dart';
 import 'package:go_green/widgets/reset_game_button.dart';
 import 'package:go_router/go_router.dart';
 
@@ -39,6 +40,7 @@ class _MenuScreenState extends ConsumerState<MenuScreen> {
               child: const Text("Start Game"),
             ),
             const ResetGameButton(),
+            const MuteButton(),
           ],
         ),
       ),
